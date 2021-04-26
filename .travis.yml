@@ -1,0 +1,14 @@
+language: elixir
+elixir:
+  - 1.4.5
+otp_release:
+  - 18.0
+  - 19.0
+  - 20.0
+before_install:
+  - mix archive.install http://s3.hex.pm/installs/hex.ez --force
+  - export MIX_ENV=test
+before_script:
+  - mix deps.get
+script:
+  - mix test
